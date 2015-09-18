@@ -14,9 +14,9 @@
     ".gitignore",
     "gulpfile.*",
     "package.json",
-    "rel/assets"
-    "rel/js"
-    "rel/index.html"
+    "rel/assets",
+    "rel/js",
+    "rel/index.html",
     "**/.*"
   ],
   "devDependencies": {
