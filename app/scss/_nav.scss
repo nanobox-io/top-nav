@@ -1,0 +1,58 @@
+$lato:Lato;
+.top-nav                     {  font-family:$lato; display:flex; flex-direction:row; align-items:center; justify-content:middle;
+  > *                        { padding-top:15px; }
+  .logo                      { cursor:pointer; display:flex; align-items:center;
+    &:after                  { display:inline-block; content:" alpha "; font-style:italic; color:#69A1BE; font-size:13px; margin-left:10px; }
+    &:hover                  {
+      svg                    {
+        *                    { /*@include transition-duration(0);*/ }
+        &:hover              {
+          .right *           { fill:lighten(#3B5669,9%); }
+          .left *            { fill:lighten(#2A3D4A,9%); }
+          .top *             { fill:lighten(#567D99,14%); }
+          .logotype *        { fill:lighten(#567D99,9%); }
+        }
+      }
+    }
+  }
+
+  .nav                       { margin-left:auto; display:flex;
+    a                        { color: #51768F; font-family:$lato; text-decoration:none; font-size:13px; padding:5px 10px; cursor:pointer;
+      &.active               { color:white;
+        &:hover              { color:white; }
+      }
+      &:not(:first-child)    { border-left: solid 1px #2a363e; }
+      &:hover                { color:#b4cddf; }
+    }
+  }
+
+  .mobile-trigger            { position:absolute; top:0; right:0; display:none;
+    &:hover svg *            { stroke:#CCECFF }
+  }
+
+  // smaller than 470px
+}
+@media screen and (max-width: 640px)
+                             {
+  .top-nav                   {
+    .nav                     { display:none;
+    }
+    &.open                   { flex-direction:column; align-items:flex-start;
+      .logo                  { background:#1D384F; width:100%; padding-bottom:15px; }
+      .nav                   { display:flex; flex-direction:column; margin-left:0; width:100%; padding-top:0;
+        a                    { border-left:none !important; display:block; color:#7E99AD; font-size:16px; background:#23435E; font-weight:normal; padding:14px;
+          &:not(:last-child) { border-bottom:solid 1px #1C394F; }
+          &:hover            { color:white; background:#274B69; }
+        }
+      }
+      .mobile-trigger        { display:block;
+        .mobile-close        { display:block; }
+        .mobile-open         { display:none; }
+      }
+    }
+    .mobile-trigger          { display:block; cursor:pointer; padding:20px;
+      .mobile-close          { display:none; }
+    }
+  }
+
+}

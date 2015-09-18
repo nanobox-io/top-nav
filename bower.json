@@ -1,0 +1,25 @@
+{
+  "name": "top-nav",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "shadow-icons-engines": "pagodabox/engines-svg-lib"
+  },
+  "ignore": [
+    "app",
+    "bower_components",
+    "node_modules",
+    "server",
+    "stage",
+    ".gitignore",
+    "gulpfile.*",
+    "package.json",
+    "rel/assets"
+    "rel/js"
+    "rel/index.html"
+    "**/.*"
+  ],
+  "devDependencies": {
+    "jade": "~1.6.0"
+  }
+}
