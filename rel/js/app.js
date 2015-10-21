@@ -27,11 +27,3 @@ if (typeof nbx === "undefined" || nbx === null) {
 }
 
 nbx.NanoTopNav = NanoTopNav;
-
-var shadowIcons, topnav;
-
-topnav = new nbx.NanoTopNav($('.wrapper'));
-
-shadowIcons = new pxicons.ShadowIcons();
-
-shadowIconsInstance.svgReplaceWithString(pxSvgIconString, $('.wrapper'));
