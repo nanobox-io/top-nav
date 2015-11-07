@@ -1,5 +1,6 @@
 $lato:Lato;
-.top-nav                     {  font-family:$lato; display:flex; flex-direction:row; align-items:center; justify-content:middle;
+$museo:Museo;
+.top-nav                     { font-family:$museo; display:flex; flex-direction:row; align-items:center; justify-content:middle;
   > *                        { padding-top:15px; }
   .logo                      { cursor:pointer; display:flex; align-items:center;
     &:after                  { display:inline-block; content:" alpha "; font-style:italic; color:#69A1BE; font-size:13px; margin-left:10px; }
@@ -16,14 +17,27 @@ $lato:Lato;
     }
   }
 
-  .nav                       { margin-left:auto; display:flex;
-    a                        { color: #51768F; font-family:$lato; text-decoration:none; font-size:13px; padding:5px 10px; cursor:pointer;
+  .nav                       { width:100%; display:flex;
+    a                        { color: #51768F; font-family:$lato; text-decoration:none; font-size:13px; padding:5px 8px; cursor:pointer;
       &.active               { color:white;
         &:hover              { color:white; }
       }
-      &:not(:first-child)    { border-left: solid 1px #2a363e; }
       &:hover                { color:#b4cddf; }
     }
+    .left, .right, .main
+    .secondary               { display:flex; }
+    .right                   { margin-left:auto; }
+    .left                    { margin-top:3px; margin-left:25px;
+      a                      { font-family:$museo; font-weight:bold; font-size:14px;  }
+      .main a                { padding:5px 16px; font-size:16px; text-transform:uppercase; color:#77A0BD;
+        &.active             { border-bottom:solid 1px #D45959; padding:5px 0px 3px; margin:0 10px; cursor:default;
+          &:hover            { color:#77A0BD; }
+        }
+        &:hover              { color:white; }
+      }
+      .secondary             { margin-left:5px; }
+    }
+
   }
 
   .mobile-trigger            { position:absolute; top:0; right:0; display:none;
