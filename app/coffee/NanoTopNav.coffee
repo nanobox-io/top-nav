@@ -2,7 +2,7 @@ class NanoTopNav
 
   constructor: ($el, context="cloud") ->
     $node = $ jadeTemplate['nav']( {context:context} )
-    $el.append( $node )
+    $el.prepend( $node )
 
     @$more    =  $(".more", $node)
     @$submenu = $("#submenu", $node)

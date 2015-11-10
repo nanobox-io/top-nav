@@ -23,7 +23,7 @@ NanoTopNav = (function() {
     $node = $(jadeTemplate['nav']({
       context: context
     }));
-    $el.append($node);
+    $el.prepend($node);
     this.$more = $(".more", $node);
     this.$submenu = $("#submenu", $node);
     this.removePointerEvents();
