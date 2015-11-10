@@ -29,10 +29,10 @@ class NanoTopNav
 
   removePointerEvents : () =>
     if @isHovering then return
-    @$submenu.css pointerEvents : 'none'
+    @$submenu.addClass "no-display"
 
   addPointerEvents : () =>
-    @$submenu.css pointerEvents : 'initial'
+    @$submenu.removeClass "no-display"
 
   addMailLink : ($el) ->
     $el.html('hello@nanobox.io').attr href:'mailto:hello@nanobox.io'

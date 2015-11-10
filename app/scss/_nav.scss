@@ -68,6 +68,7 @@ $museo:Museo;
     &:hover svg *             { stroke:#CCECFF }
   }
   .submenu                    { @include transition(all, 0.13s); opacity:0; padding:30px 40px; background:linear-gradient(315deg,#4adce8, #ff2b98); color:white; position:absolute; left:213px; top:50px;
+    &.no-display              { display:none; }
     &.visible                 { opacity:1; top:62px; }
     &:before                  { opacity:0; content:""; cursor:pointer; display:block; background:red; top:-45px; left:340px; width:100px; height:48px; display:block; position:absolute; clip-path: polygon(20%  0, 100% 0%, 100% 100%, 0% 100%); }
     a                         { color:white; text-decoration:none; font-style:italic; font-family:$lato; }
@@ -92,19 +93,16 @@ $museo:Museo;
     }
   }
 }
-@media screen and (max-width: 640px)
+
+
+@media screen and (max-width:750px )
                               {
   .top-nav                    {
-    .nav                      { display:none;
-    }
-    &.open                    { flex-direction:column; align-items:flex-start;
+    .nav                      { display:none; }
+    &.open                    { flex-direction:column;
       .logo                   { background:#1D384F; width:100%; padding-bottom:15px; }
-      .nav                    { display:flex; flex-direction:column; margin-left:0; width:100%; padding-top:0;
-        a                     { border-left:none !important; display:block; color:#7E99AD; font-size:16px; background:#23435E; font-weight:normal; padding:14px;
-          &:not(:last-child)  { border-bottom:solid 1px #1C394F; }
-          &:hover             { color:white; background:#274B69; }
-        }
-      }
+      .nav                    { display:none; }
+      .submenu                { display:flex; opacity:1; pointer-events:initial; }
       .mobile-trigger         { display:block;
         .mobile-close         { display:block; }
         .mobile-open          { display:none; }
@@ -112,6 +110,33 @@ $museo:Museo;
     }
     .mobile-trigger           { display:block; cursor:pointer; padding:20px;
       .mobile-close           { display:none; }
+    }
+    .submenu                { flex-direction:column; display:none; top:initial;
+                              @include transition(all, 0s); position:relative; top:initial; left:initial; width:100%; padding:0;
+     &.visible              { opacity:1; top:0; }
+
+      .categories           { margin:30px;
+        .category           { width:33%; min-width:initial;}
+      }
+      .footer               { margin:30px;}
+      &:before              { display:none; }
+    }
+  }
+}
+
+
+@media screen and (max-width:455px )
+{
+  .top-nav                    {
+    &.open                    {
+      .submenu                {
+        .categories           { flex-direction:column; margin-bottom:0;
+          .category           { width:100%; margin-bottom:30px;
+            a                 { font-size:17px; padding:0 5px 8px; }
+          }
+        }
+        .footer               { margin-top:-5px; }
+      }
     }
   }
 }

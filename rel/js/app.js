@@ -52,15 +52,11 @@ NanoTopNav = (function() {
     if (this.isHovering) {
       return;
     }
-    return this.$submenu.css({
-      pointerEvents: 'none'
-    });
+    return this.$submenu.addClass("no-display");
   };
 
   NanoTopNav.prototype.addPointerEvents = function() {
-    return this.$submenu.css({
-      pointerEvents: 'initial'
-    });
+    return this.$submenu.removeClass("no-display");
   };
 
   NanoTopNav.prototype.addMailLink = function($el) {
