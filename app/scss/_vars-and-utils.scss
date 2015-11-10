@@ -17,3 +17,11 @@
   -moz-box-shadow: $xoffset $yoffset $blur $radius $color;
   box-shadow: $xoffset $yoffset $blur $radius $color;
 }
+
+@mixin triangle ($color:#51768F, $wid:4px, $tal:5px){
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: $tal $wid 0 $wid;
+  border-color: $color transparent transparent transparent;
+}

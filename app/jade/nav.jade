@@ -1,19 +1,45 @@
-.top-nav
+.top-nav(class="#{context}")
   .logo
     a(href="//desktop.nanobox.io")
       img.shadow-icon(data-src="logo-horizontal")
   .nav
     .left
       .main
-        a.active(href="#") Desktop
-        a(href="#") Cloud
+        a.active(href="//desktop.nanobox.io") Desktop
+        a(href="//nanobox.io/cloud") Cloud
       .secondary
-        a(href="//docs.nanobox.io/") Docs
-        a(href="//desktop.nanobox.io/downloads") Download
-        a.open-community(onclick=' $(".community-modal").toggleClass("hidden"); ') Community
-        a(href="//engines.nanobox.io") Engines
+        a.cloud-only(href="//nanobox.io/pricing") Pricing
+        a.cloud-only(href="//nanobox.io/open-source") Open Source
+        a.desktop-only(href="//engines.nanobox.io") Engines
+        a.desktop-only(href="//desktop.nanobox.io/downloads") Download
+        a.more More
     .right
       a.sign-up(href="//dashboard.nanobox.io/users/sign_in") Login / Register
+  .submenu#submenu
+    .categories
+      .category.desktop
+        .title DESKTOP
+        .links
+          a(href="//desktop.nanobox.io/downloads") Download
+          a(href="//engines.nanobox.io") Engines
+          a(href="//github.com/nanobox-io?utf8=%E2%9C%93&query=nanobox") Source Code
+          a(href="//trello.com/b/4nVFzmNZ/nanobox") Trello
+      .category.cloud
+        .title CLOUD
+        .links
+          a(href="//nanobox.io/pricing") Pricing
+          a(href="//nanobox.io/open-source") Open Source
+      .category.etc 
+        .title etc.
+        .links
+          a(href="//blog.nanobox.io") Blog
+          a(href="//github.com/nanobox-io?utf8=%E2%9C%93&query=nanobox") Github
+          a(href="//twitter.com/nanobox_io") Twitter
+          a(href="//webchat.freenode.net/?channels=nanobox") #nanobox (IRC freenode)
+          a.mail(href="") 
+    .footer
+      a(href="#") Sitemap
+      a(href="#") Legal
   .mobile-trigger
     .btn.mobile-open(onclick=' $(".top-nav").addClass("open"); ')
       img.shadow-icon(data-src="mobile-open")
