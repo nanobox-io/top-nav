@@ -67,7 +67,7 @@ $museo:Museo;
   .mobile-trigger             { position:absolute; top:0; right:0; display:none;
     &:hover svg *             { stroke:#CCECFF }
   }
-  .submenu                    { @include transition(all, 0.13s); opacity:0; padding:30px 40px; background:linear-gradient(315deg,#4adce8, #ff2b98); color:white; position:absolute; left:213px; top:50px;
+  .submenu                    { z-index: 1000; @include transition(all, 0.13s); opacity:0; padding:30px 40px; background:linear-gradient(315deg,#4adce8, #ff2b98); color:white; position:absolute; left:213px; top:50px;
     &.no-display              { display:none; }
     &.visible                 { opacity:1; top:62px; }
     &:before                  { opacity:0; content:""; cursor:pointer; display:block; background:red; top:-45px; left:340px; width:100px; height:48px; display:block; position:absolute; clip-path: polygon(20%  0, 100% 0%, 100% 100%, 0% 100%); }

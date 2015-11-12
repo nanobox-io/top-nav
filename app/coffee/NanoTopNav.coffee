@@ -4,6 +4,8 @@ class NanoTopNav
     $node = $ jadeTemplate['nav']( {context:context} )
     $el.prepend( $node )
 
+    $(".main a.#{context}", $node).addClass 'active'
+
     @$more    =  $(".more", $node)
     @$submenu = $("#submenu", $node)
 
